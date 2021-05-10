@@ -11,6 +11,8 @@ public class IncrementTest {
     //int from -2147483648 to 2147483647        2^32
     //long                                      2^64
 
+    //char from '\u0000' (or 0) to '\uffff' (or 65,535 inclusive)
+
     private static final Logger log = Logger.getLogger(IncrementTest.class.getName());
 
     @Test
