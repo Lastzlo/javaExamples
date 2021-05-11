@@ -76,6 +76,25 @@ public class SomeTests {
         assertInstanceOf(DefaultValuesContainer.class, container, "container is an instance of the class DefaultValuesContainer.class");
     }
 
+    /**
+     * Все целочисленные литералы, например, числа 10, 4, -5,
+     * воспринимаются как значения типа int, однако мы можем присваивать
+     * целочисленные литералы другим целочисленным типам: byte, long, short.
+     * В этом случае Java автоматически осуществляет соответствующие преобразования
+     *     byte a = 1;
+     *     short b = 2;
+     *     long c = 2121;
+     * Однако если мы захотим присвоить переменной типа long очень большое число,
+     * которое выходит за пределы допустимых значений для типа int, то мы столкнемся
+     * с ошибкой во время компиляции:
+     *     long num = 2147483649;
+     * Здесь число 2147483649 является допустимым для типа long, но выходит за
+     * предельные значения для типа int. И так как все целочисленные значения по
+     * умолчанию расцениваются как значения типа int, то компилятор укажет нам на ошибку.
+     * Чтобы решить проблему, надо добавить к числу суффикс l или L, который указывает,
+     * что число представляет тип long:
+     *     long num = 2147483649L;
+     */
     @Test
     public void LongVariableDeclaration() {
 
@@ -89,6 +108,11 @@ public class SomeTests {
         longValue = maxValue + 1L;
         System.out.println("longValue = " + longValue);
         assertEquals(2147483648L, longValue, "суффикс l или L, указывает, что число представляет тип long");
+
+        longValue =  (maxValue + (long)1);  //преобразовали int 1 в long
+        System.out.println("longValue = " + longValue);
+        assertEquals(2147483648L, longValue);
+
 
     }
 
