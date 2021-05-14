@@ -3,6 +3,7 @@ package org.example.java.lang;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
 import java.util.logging.Logger;
 
 public class OverflowValuesTest {
@@ -37,6 +38,26 @@ public class OverflowValuesTest {
 
         System.out.println("result = " + result);
         Assertions.assertEquals(-32768, result);
+    }
+
+    @Test
+    public void numericOverflowTest() {
+        int value = Integer.MAX_VALUE + 1;  //ошибки не будет, // фактическим значением будет -2147483648
+
+        System.out.println("value = " + value);
+        Assertions.assertEquals(-2147483648, value);
+
+        value = Integer.MIN_VALUE - 1;  //ошибки не будет, // фактическим значением будет 2147483647
+
+        System.out.println("value = " + value);
+        Assertions.assertEquals(2147483647, value);
+
+        //byte byte1 = Byte.MAX_VALUE + 1;      //нужно преобразовывать
+        //char char1 = Character.MAX_VALUE + 1; //нужно преобразовывать
+
+        long long1 = Long.MAX_VALUE + 1;
+        float float1 = Float.MAX_VALUE + 1;
+
     }
 
     @Test
@@ -102,6 +123,36 @@ public class OverflowValuesTest {
         Assertions.assertEquals(32766, a);
 
     }
+
+    @Test
+    public void overflowShortValue_whenGiven200k() {
+
+        short result = (short) 200_000;
+
+        Assertions.assertEquals(3392, result, "it's 3392");
+
+        result = (short) 229_375;   //65_536*3+32_767
+        Assertions.assertEquals(32767, result, "it's 32767");
+
+
+    }
+
+    //Convert Int to Unsigned Byte and Back
+    @Test
+    public void convertIntToUnsignedByteAndBack() {
+        // максимальное значение byte 256
+        int i = 234;
+
+        // Convert int to binary
+        byte b = (byte) i;
+        System.out.println(b); // -22
+
+        // Convert binary to int
+        int i2 = b & 0xFF;
+        System.out.println(i2); // 234
+
+    }
+
 
 
 }

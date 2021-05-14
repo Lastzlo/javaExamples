@@ -98,6 +98,9 @@ public class SomeTests {
     @Test
     public void LongVariableDeclaration() {
 
+        long aLong = 23l;   //long
+        long aLong_2 = 23L;   //long
+
         int maxValue = Integer.MAX_VALUE;
         System.out.println("maxValue = " + maxValue);
 
@@ -113,6 +116,82 @@ public class SomeTests {
         System.out.println("longValue = " + longValue);
         assertEquals(2147483648L, longValue);
 
+
+    }
+
+    /**
+     * Числа с плавающей точкой
+     *
+     * При присвоении переменной типа float дробного литерала с плавающей точкой,
+     * например, 3.1, 4.5 и т.д., Java автоматически рассматривает этот литерал как значение
+     * типа double. И чтобы указать, что данное значение должно рассматриваться как float,
+     * нам надо использовать суффикс f
+     * */
+    @Test
+    public void FloatVariableDeclaration() {
+
+        //float: хранит число с плавающей точкой от -3.4*1038 до 3.4*1038 и занимает 4 байта
+        float aFloat = 30.6f;   //float
+        float aFloat3 = 30.6F;   //float
+        //float aFloat2 = 30.6;   //java: incompatible types: possible lossy conversion from double to float
+
+        //double: хранит число с плавающей точкой от ±4.9*10-324 до ±1.8*10308 и занимает 8 байт
+        double aDouble = 36.6;  //double
+
+    }
+
+
+    //use "_" in Numeric Literals
+    @Test
+    public void UsingUnderscoreCharactersInNumericLiterals() {
+        long creditCardNumber = 1234_5678_9012_3456L;
+        long socialSecurityNumber = 999_99_9999L;
+        float pi =  3.14_15F;
+        long hexBytes = 0xFF_EC_DE_5E;
+        long hexWords = 0xCAFE_BABE;
+        long maxLong = 0x7fff_ffff_ffff_ffffL;
+        byte nybbles = 0b0010_0101;
+        long bytes = 0b11010010_01101001_10010100_10010010;
+        double aDoubleValue = 256.23_33_3345655656___5;
+
+
+        // Invalid: cannot put underscores
+        // adjacent to a decimal point
+        //float pi1 = 3_.1415F;   //java: illegal underscore
+
+        // Invalid: cannot put underscores
+        // adjacent to a decimal point
+        //float pi2 = 3._1415F;
+
+        // Invalid: cannot put underscores
+        // prior to an L suffix
+        //long socialSecurityNumber1 = 999_99_9999_L;
+
+        // OK (decimal literal)
+        int x1 = 5_2;
+
+        // Invalid: cannot put underscores
+        // At the end of a literal
+        //int x2 = 52_;
+
+        // OK (decimal literal)
+        int x3 = 5_______2;
+
+        // Invalid: cannot put underscores
+        // in the 0x radix prefix
+        //int x4 = 0_x52;
+
+
+        // Invalid: cannot put underscores
+        // at the beginning of a number
+        //int x5 = 0x_52;
+
+        // OK (hexadecimal literal)
+        int x6 = 0x5_2;
+
+        // Invalid: cannot put underscores
+        // at the end of a number
+        //int x7 = 0x52_;
 
     }
 
@@ -139,6 +218,5 @@ class DefaultValuesContainer {
                 ", defaultString='" + defaultString + '\'' +
                 '}';
     }
-
 
 }
