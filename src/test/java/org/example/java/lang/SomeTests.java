@@ -68,6 +68,7 @@ public class SomeTests {
         // переменной x присваивается число 10, значит,
         // переменная будет представлять тип int.
         var integer = 10;
+        assertEquals(10, integer, "it should be true");
 
         //var value; // Compilation Error, var обязательно должен быть инициализирован чтобы был установлен тип переменной
 
@@ -98,8 +99,11 @@ public class SomeTests {
     @Test
     public void LongVariableDeclaration() {
 
-        long aLong = 23l;   //long
-        long aLong_2 = 23L;   //long
+        long aLong = 20l;   //long
+        aLong = 23L;   //long
+
+        assertEquals(23, aLong, "it should be true");
+        assertEquals(23L, aLong, "it should be true");
 
         int maxValue = Integer.MAX_VALUE;
         System.out.println("maxValue = " + maxValue);
@@ -197,6 +201,17 @@ public class SomeTests {
 
 }
 
+
+//Data Type	    Default Value (for fields)
+//byte	        0
+//short	        0
+//int	        0
+//long	        0L
+//float	        0.0f
+//double	    0.0d
+//char	        '\u0000'
+//boolean	    false
+//String (or any object)  	null
 class DefaultValuesContainer {
     public int defaultInt;
     public boolean defaultBoolean;
