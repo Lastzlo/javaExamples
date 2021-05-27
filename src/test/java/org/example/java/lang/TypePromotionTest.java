@@ -41,6 +41,25 @@ public class TypePromotionTest {
         Assertions.assertEquals(0.25, 1.0/f);
     }
 
+    //While evaluating expressions, the intermediate value may exceed the range of operands and hence the expression value will be promoted. Some conditions for type promotion are:
+    //
+    //Java automatically promotes each byte, short, or char operand to int when evaluating an expression.
+    //If one operand is a long, float or double the whole expression is promoted to long, float or double respectively.
+    @Test
+    void typePromotionTest2() {
+        byte b = 42;
+        char c = 'a';
+        short s = 1024;
+        int i = 50000;
+        float f = 5.67f;
+        double d = .1234;
+
+        // The Expression
+        double result = (f * b) + (i / c) - (d * s);
+
+        //Result after all the promotions are done
+        System.out.println("result = " + result);
+    }
 
 
 
