@@ -10,16 +10,30 @@ public class LoopTest {
 
     @Test
     public void RunForLoopFiveTimes_whenIncrement() {
-        for (int i = 0; i < 5; i++) {
-            log.info("i = "+i);
+        int temp;
+        for (temp = 1; temp <5; temp++) {
+            System.out.println("temp = " + temp);
         }
+        Assertions.assertEquals(5, temp, "temp should be 5");
+
+        //temp = 1
+        //temp = 2
+        //temp = 3
+        //temp = 4
     }
 
     @Test
     public void RunForLoopFiveTimes_whenPostIncrement() {
-        for (int i = 0; i < 5; ++i) {
-            log.info("i = "+i);
+        int temp;
+        for (temp = 1; temp <5; ++temp) {
+            System.out.println("temp = " + temp);
         }
+        Assertions.assertEquals(5, temp, "temp should be 5");
+
+        //temp = 1
+        //temp = 2
+        //temp = 3
+        //temp = 4
     }
 
     @Test

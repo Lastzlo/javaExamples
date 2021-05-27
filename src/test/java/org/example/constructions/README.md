@@ -10,3 +10,4 @@
 - switch когда повторяются значения в switch;
 - switch когда break;
 - что можно передать в switch;
+- what will happen if you pass a few minuses (-------) to method; 

@@ -15,7 +15,7 @@ public class ConditionalConstructs {
         int a = 15;
 
         if(a > 10) {
-            System.out.println("a больше 1о");
+            System.out.println("a больше 10");
         } else if(a > 5) {
             System.out.println("a больше 5");
         } else {
