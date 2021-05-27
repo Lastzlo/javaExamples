@@ -3,7 +3,6 @@ package org.example.java.lang;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.math.BigInteger;
 import java.util.logging.Logger;
 
 public class OverflowValuesTest {
@@ -13,7 +12,7 @@ public class OverflowValuesTest {
     //int from -2147483648 to 2147483647        2^32
     //long                                      2^64
 
-    //char from '\u0000' (or 0) to '\uffff' (or 65,535 inclusive)
+    //char from '\u0000' (from 0) to '\uffff' (to 65_535)
 
     private static final Logger log = Logger.getLogger(OverflowValuesTest.class.getName());
 
@@ -22,6 +21,7 @@ public class OverflowValuesTest {
         int a = Short.MAX_VALUE;  //32767
         int b = 1;  //1
 
+        //int
         int result = (short)(a + b);
 
         System.out.println("result = " + result);
@@ -34,6 +34,7 @@ public class OverflowValuesTest {
         short b = 1;  //1
 
         //short result = (a + b);   //ошибка ведь значение выходит за предел short 32767
+        //short
         short result = (short)(a + b);
 
         System.out.println("result = " + result);
@@ -152,7 +153,5 @@ public class OverflowValuesTest {
         System.out.println(i2); // 234
 
     }
-
-
 
 }
