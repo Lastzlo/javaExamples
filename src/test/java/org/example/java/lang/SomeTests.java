@@ -67,12 +67,12 @@ public class SomeTests {
         // которое ей присваивается. Например,
         // переменной x присваивается число 10, значит,
         // переменная будет представлять тип int.
-        var integer = 10;
+        int integer = 10;
         assertEquals(10, integer, "it should be true");
 
         //var value; // Compilation Error, var обязательно должен быть инициализирован чтобы был установлен тип переменной
 
-        var container = new DefaultValuesContainer();
+        DefaultValuesContainer container = new DefaultValuesContainer();
 
         assertInstanceOf(DefaultValuesContainer.class, container, "container is an instance of the class DefaultValuesContainer.class");
     }
