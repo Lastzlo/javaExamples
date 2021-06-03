@@ -9,7 +9,7 @@ public class PassingInformationToAMethod {
     public void ArbitraryNumberOfArguments(){
 
         class TestArbitraryNumberOfArguments{
-           static int printLengthOfArray(int ... array){
+           public int printLengthOfArray(int ... array){
                return array.length;
            }
         }
@@ -17,7 +17,7 @@ public class PassingInformationToAMethod {
 
         //int array
         int[] array = new int[]{0,1,2,3,4}; //length = 5
-        int result =  TestArbitraryNumberOfArguments.printLengthOfArray(array);
+        int result = new TestArbitraryNumberOfArguments().printLengthOfArray(array);
         assertEquals(5, result);
 
     }
