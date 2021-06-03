@@ -18,13 +18,7 @@ package org.example.oop.classesAndObjects;
 public class packagesImport {
     @org.junit.jupiter.api.Test
     public void staticImportFullName() {
-        class TestCase {
-
-            public static void main(String[] args) {
-                org.junit.jupiter.api.Assertions.assertEquals(3, 3);
-            }
-
-        }
+        org.junit.jupiter.api.Assertions.assertEquals(3, 3);
     }
 
 
