@@ -1,5 +1,6 @@
 package org.example.oop.inheritanceAndTypeConversion.TestCase2;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Plant {
@@ -23,13 +24,17 @@ class Camomile extends Rose {
     @Test
     public void whatWillBeResult() {
         Plant[] plants = new Plant[]{new Rose(), new Camomile()};
-        for(Plant plant : plants) {
-            if (plant instanceof Rose) {
-                ( (Camomile)plant).prick();
-                plant.smell();
-            }
 
-        }
+        Assertions.assertThrows(ClassCastException.class, () -> {
+
+            for(Plant plant : plants) {
+                if (plant instanceof Rose) {
+                    ( (Camomile)plant).prick();
+                    plant.smell();
+                }
+            }
+        });
+
 
     }
 
