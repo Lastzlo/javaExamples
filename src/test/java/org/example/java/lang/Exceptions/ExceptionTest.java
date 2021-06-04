@@ -71,7 +71,7 @@ class ExceptionThrown
     // In this method found appropriate Exception handler.
     // i.e. matching catch block.
     @Test
-    public static void main(String[] args) {
+    public void computeDivision() {
         int a = 1;
         int b = 0;
 
