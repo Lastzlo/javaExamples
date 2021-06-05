@@ -39,13 +39,21 @@ class TestExceptionChild extends Parent{
     public void print_whenNeedDeclareException() {
 
         //we want to declare try{} catch OR throws Exception in head,
-        //because parent.print() have throws Exception
+        //because Parent.print() have throws Exception
         try {
             Parent parent = new TestExceptionChild();   //!!!
             parent.print();   //Child print
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void print_whenDontNeedDeclareException_becauseCastToChild() {
+        //we dont declare try{} catch OR throws Exception in head,
+        //because we cast to Child
+        Parent parent = new TestExceptionChild();   //!!!
+        ((TestExceptionChild)parent).print();   //Child print
     }
 
     @Test
