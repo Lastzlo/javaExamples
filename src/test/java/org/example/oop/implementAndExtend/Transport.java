@@ -1,8 +1,8 @@
 package org.example.oop.implementAndExtend;
 
 public interface Transport {
-    void ride();
-    void stop();
+    String ride();
+    String stop();
 
     boolean hasSeat();
     String getName();

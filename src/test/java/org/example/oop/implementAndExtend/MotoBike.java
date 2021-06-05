@@ -9,6 +9,20 @@ public class MotoBike extends Bike{
         this.maxSpeed = maxSpeed;
     }
 
+    @Override
+    public String ride() {
+        String msg = "MotoBike is running...";
+        System.out.println(msg);
+        return msg;
+    }
+
+    @Override
+    public String stop() {
+        String msg = "MotoBike was stopped...";
+        System.out.println(msg);
+        return msg;
+    }
+
     public double getMaxSpeed() {
         return maxSpeed;
     }

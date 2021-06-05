@@ -15,13 +15,17 @@ public class Bike implements Transport {
     }
 
     @Override
-    public void ride() {
-        System.out.println("Bike is running...");
+    public String ride() {
+        String msg = "Bike is running...";
+        System.out.println(msg);
+        return msg;
     }
 
     @Override
-    public void stop() {
-        System.out.println("Bike was stopped...");
+    public String stop() {
+        String msg = "Bike was stopped...";
+        System.out.println(msg);
+        return msg;
     }
 
     @Override
