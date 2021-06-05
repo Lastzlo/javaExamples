@@ -14,8 +14,8 @@ public class ExceptionTask2 {
                 System.out.println("2");                //2
                 throw new IllegalArgumentException();
             } catch (IllegalArgumentException e) {
-                System.out.println("3");                //3
-                throw new RuntimeException("first");
+                System.out.println("3");                //3 так как IllegalArgumentException пойман то после выполняется finally
+                throw new RuntimeException("first");    // непонятно почему этот проигнорен
             } catch (RuntimeException e) {
                 System.out.println("4");                //сюда оно не пошло, оно пошло в finally
                 throw new RuntimeException("second");
