@@ -3,9 +3,9 @@ package org.example.java.lang.Exceptions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 public class ExceptionTest {
+
+    //test use assertThrows for contain Exception
     @Test
     public void thenNullPointerException() {
         Assertions.assertThrows(NullPointerException.class, () -> {
@@ -16,8 +16,14 @@ public class ExceptionTest {
 
     /**Difference between throw and throws in Java*/
     //Java throw example
-    void throw_example(){
+    void throw_example_whenExceptionExtendsRuntimeException(){
+
         throw new ArithmeticException("sorry");
+    }
+
+    void throw_example_whenExceptionExtendsException() throws Exception{
+
+        throw new Exception("sorry");
     }
 
     //Java throws example
@@ -86,33 +92,10 @@ class ExceptionThrown
         {
             // getMessage will print description of exception(here / by zero)
             System.out.println(ex.getMessage());    //divide by zero
+
+            Assertions.assertEquals("divide by zero", ex.getMessage());
+
         }
     }
 }
 
-
-
-
-class TestExceptionPropagation2{
-
-    //обязательно нужно throws IOException потому что это наследник Exception
-    //If you are calling a method that declares an exception, you must either caught or declare the exception.
-    void m() throws IOException {
-        throw new java.io.IOException("device error");//checked exception
-    }
-    void n() throws IOException {
-        m();
-    }
-    void p(){
-        try{
-            n();
-        }catch(Exception e){System.out.println("exception handeled");}
-    }
-
-    @Test
-    public static void main(String args[]){
-        TestExceptionPropagation2 obj=new TestExceptionPropagation2();
-        obj.p();
-        System.out.println("normal flow");
-    }
-}
