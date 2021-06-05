@@ -8,7 +8,7 @@ public class ExceptionTest2 {
 
 
 class Parent{
-    void msg(){System.out.println("Parent msg");}
+    protected void msg(){System.out.println("Parent msg");}
 
     void print() throws Exception {System.out.println("Parent print");}
 
@@ -24,9 +24,11 @@ class TestExceptionChild extends Parent{
 //        System.out.println("TestExceptionChild");
 //    }
 
+
+
     @Test
-    public void msg() {
-        Parent p=new TestExceptionChild();
+    public void run_msg() {
+        Parent p = new TestExceptionChild();
         p.msg();    //Parent msg
     }
 
