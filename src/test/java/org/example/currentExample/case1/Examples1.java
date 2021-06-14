@@ -18,9 +18,9 @@ class CurrentThreadDemo {
         thread.setName("Main Thread");
         System.out.println("Після зміни імені:" + thread);
         try {
-            for (int n = 0; n > 5; n--) {
+            for (int n = 5; n > 0; n--) {
                 System.out.println(n);
-                Thread.sleep(2000);
+                Thread.sleep(200);
             }
         } catch(InterruptedException e) {
             System.out.println("Головний потік перерваний");
