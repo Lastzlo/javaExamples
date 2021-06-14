@@ -47,4 +47,21 @@ public class StringTasks {
         Assertions.assertFalse(task1("Abcd2e"));
     }
 
+    @Test
+    public void StringIntern() {
+        String s1 = "abc";
+        String s2 = "abc";
+        System.out.println("(s1 == s2) = " + (s1 == s2)); //true
+
+        System.out.println("(s1 == s2.intern()) = " + (s1 == s2.intern())); //true
+
+        System.out.println("(\"123\" == \"123\") = " + ("123" == "123")); //true
+    }
+
+    @Test
+    public void concatTest() {
+        String s1 = "abc";
+        s1.concat(s1);
+    }
+
 }
