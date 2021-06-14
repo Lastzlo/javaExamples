@@ -1,6 +1,6 @@
-package com.softserve;
+package tasks.packageExample;
 
-//import com.softserve.ita.Student;
+import tasks.packageExample.innerPackage.Student;
 
 import java.util.List;
 import java.util.Set;
