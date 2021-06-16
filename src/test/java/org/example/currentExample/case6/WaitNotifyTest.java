@@ -26,13 +26,18 @@ class Customer{
     public synchronized void withdraw(int amount){
         System.out.println("going to withdraw...");
 
-        try{
-            while(this.amount < amount) {
-                System.out.println("Less balance; waiting for deposit...");
-                wait();
-            }
-        }catch(Exception e){
-            e.printStackTrace();
+//        try{
+//            while(this.amount < amount) {
+//                System.out.println("Less balance; waiting for deposit...");
+//                wait();
+//            }
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+
+        if(this.amount<amount){
+            System.out.println("Less balance; waiting for deposit...");
+            try{wait();}catch(Exception e){}
         }
 
         this.amount -= amount;
