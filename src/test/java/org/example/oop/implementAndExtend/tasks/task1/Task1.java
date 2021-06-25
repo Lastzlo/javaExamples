@@ -1,7 +1,23 @@
-package org.example.oop.implementAndExtend.tasks;
+package org.example.oop.implementAndExtend.tasks.task1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+class A {
+    int i = 0;
+
+    public int increment() {
+        return ++i;
+    }
+}
+
+class B extends A {
+    int i = 10;
+
+    public int increment() {
+        return ++i;
+    }
+}
 
 public class Task1 {
     @Test
@@ -20,18 +36,3 @@ public class Task1 {
 
 }
 
-class A {
-    int i = 0;
-
-    public int increment() {
-        return ++i;
-    }
-}
-
-class B extends A {
-    int i = 10;
-
-    public int increment() {
-        return ++i;
-    }
-}
