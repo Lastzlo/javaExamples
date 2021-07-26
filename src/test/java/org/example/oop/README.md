@@ -16,5 +16,6 @@
 - arbitrary Number of Arguments: Varargs its like String ... args, int ... args;
 - :: что это может Method Reference??;
 - Java Lambdas and the Single Method Interface
+- effectively final temp variable - дополнительная переменная для хранения final версии переменной, используется когда передаем во внтрение классы
 
   
