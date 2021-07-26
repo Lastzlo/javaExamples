@@ -3,7 +3,7 @@ package org.example.oop.abstractExamples;
 abstract class correctAbstractDefinition {
 
 
-    //void methodWithBody( );       -- no abstract method should be with body
+    //void methodWithBody1( );       //-- no abstract method should be with body
     void methodWithBody( ) { };
 
     //abstract void methodWithMissingBody( ) { }    -- abstract should be without body
