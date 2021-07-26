@@ -20,6 +20,10 @@ interface MyInterface {
     void method1();
     void method2();
     void method3();
+
+    default int getIdCode() {
+        return idCode;
+    }
 }
 
 abstract class MyAbstract implements org.example.oop.abstractExamples.MyInterface {
