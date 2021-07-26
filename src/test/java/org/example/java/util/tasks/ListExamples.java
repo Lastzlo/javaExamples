@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,6 +18,26 @@ public class ListExamples {
         list.add(12);
         Integer integer = list.get(0);
         assertEquals(12, integer);
+    }
+
+    @Test
+    void sortDoublesUseStream() {
+        List<Double> list = new ArrayList<>();
+        list.add(12d);
+        list.add(6d);
+        list.add(2d);
+        List<Double> doubleList = list.stream().sorted().collect(Collectors.toList());
+        doubleList.forEach(System.out::println);
+    }
+
+    @Test
+    void sortDoublesUseCollections() {
+        List<Double> list = new ArrayList<>();
+        list.add(12d);
+        list.add(6d);
+        list.add(2d);
+        list.sort(Double::compareTo);
+        list.forEach(System.out::println);
     }
 
     @Test
