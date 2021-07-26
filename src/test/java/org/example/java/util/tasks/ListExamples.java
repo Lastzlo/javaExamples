@@ -21,6 +21,31 @@ public class ListExamples {
     }
 
     @Test
+    void listAddValue() {
+        List<Integer> list = new ArrayList<>();
+        list.add(12);
+        list.add(24);
+
+        list.add(1, 33);
+        assertEquals(12, list.get(0));
+        assertEquals(33, list.get(1));
+        assertEquals(24, list.get(2));
+    }
+
+    @Test
+    void listSetValue() {
+        List<Integer> list = new ArrayList<>();
+        list.add(12);
+        list.add(24);
+
+        assertEquals(24, list.get(1));
+
+        list.set(1, 33);
+
+        assertEquals(33, list.get(1));
+    }
+
+    @Test
     void sortDoublesUseStream() {
         List<Double> list = new ArrayList<>();
         list.add(12d);
