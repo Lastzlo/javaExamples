@@ -3,7 +3,23 @@ package org.example.java.lang.String.tasks;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringTasks {
+
+    @Test
+    void printLnTask() {
+        int mass[] = {1,2};
+
+        List<String> list = new ArrayList<>();
+        list.add("03");
+        list.add("04");
+
+        System.out.println(mass.length + list.size() + ".");    //  4.
+        System.out.println("." + mass.length + list.size());    //  .22
+    }
+
     @Test
     public void isFirsLetterInUpperCase_thenFalse() {
         String word = "abcde";
