@@ -10,10 +10,16 @@ public class EnumMethods {
         int ordinal = Month.April.ordinal();
         System.out.println("name = " + name);   //April
         System.out.println("ordinal = " + ordinal); //0
+
+        System.out.println(Month.April);
     }
 }
 
 enum Month {
     April,
-    Spring
+    Spring;
+
+    Month() {
+        System.out.println("color");
+    }
 }
