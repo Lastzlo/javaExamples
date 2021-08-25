@@ -3,6 +3,8 @@ package org.example.java.lang.CasesWithArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class CreateArray {
     @Test
     public void createMultiplyArray() {
@@ -121,5 +123,60 @@ static int[] intsStatic;
         //System.out.println("ints = " + ints);   //compl error
 
         System.out.println("intsStatic = " + intsStatic);   //intsStatic = null
+    }
+
+    @Test
+    void indexAndLengthOfArray() {
+        double array[] = new double[10];    //размер массива
+        //эллемны в массиве от 0 до 9
+        for(int i = 0; i < array.length; i++) {
+            System.out.println("array[" + i + "] = " + array[i]);
+        }
+    }
+
+    @Test
+    void arraysSort() {
+
+        int array[] = {1, 3, 0, 4, 3, 0};
+
+        Arrays.sort(array);
+        System.out.println("Arrays.toString(array) = " + Arrays.toString(array));
+
+        int search = Arrays.binarySearch(array, 0);
+        System.out.println("search = " + search);
+        search = Arrays.binarySearch(array, 3);
+        System.out.println("search = " + search);
+        search = Arrays.binarySearch(array, 1);
+        System.out.println("search = " + search);
+        search = Arrays.binarySearch(array, 0);
+        System.out.println("search = " + search);
+    }
+
+    @Test
+    void equalsVsCompareVsMismatch() {
+        int [] arr = {10, 3};
+        int [] arr2 = {12, 7};;
+
+        boolean equals = Arrays.equals(arr, arr2);  //false
+        System.out.println("equals = " + equals);
+        int compare = Arrays.compare(arr, arr2);    //1
+        System.out.println("compare = " + compare);
+        int mismatch = Arrays.mismatch(arr, arr2);  //0
+        System.out.println("mismatch = " + mismatch);
+
+    }
+
+    @Test
+    void equalsVsCompareVsMismatch2() {
+        int [] arr = {10, 3};
+        int [] arr2 = {10, 3};;
+
+        boolean equals = Arrays.equals(arr, arr2);  //true
+        System.out.println("equals = " + equals);
+        int compare = Arrays.compare(arr, arr2);    //0
+        System.out.println("compare = " + compare);
+        int mismatch = Arrays.mismatch(arr, arr2);  //-1
+        System.out.println("mismatch = " + mismatch);
+
     }
 }
