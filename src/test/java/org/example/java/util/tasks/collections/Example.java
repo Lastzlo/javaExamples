@@ -1,4 +1,4 @@
-package org.example.java.util.tasks;
+package org.example.java.util.tasks.collections;
 
 import org.junit.jupiter.api.Test;
 
