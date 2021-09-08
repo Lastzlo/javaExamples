@@ -93,7 +93,7 @@ class ExceptionThrown
             // getMessage will print description of exception(here / by zero)
             System.out.println(ex.getMessage());    //divide by zero
 
-            Assertions.assertEquals("divide by zero", ex.getMessage());
+            Assertions.assertEquals("/ by zero", ex.getMessage());
 
         }
     }

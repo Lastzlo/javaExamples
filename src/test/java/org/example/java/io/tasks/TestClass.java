@@ -7,15 +7,15 @@ import java.io.InputStreamReader;
 
 public class TestClass {
 
-    @Test
-    void creteInput() {
-        InputStreamReader br = new InputStreamReader(System.in);
-        try {
-            br.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+//    @Test
+//    void creteInput() {
+//        InputStreamReader br = new InputStreamReader(System.in);
+//        try {
+//            br.read();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
 }

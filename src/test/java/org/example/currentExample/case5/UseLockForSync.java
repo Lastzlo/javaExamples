@@ -4,23 +4,6 @@ package org.example.currentExample.case5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class MyThread implements Runnable{
-    private Account account;
-    private int withdrawMoney;
-
-    public MyThread(Account account, int withdrawMoney) {
-        this.account = account;
-        this.withdrawMoney = withdrawMoney;
-    }
-
-    @Override
-    public void run() {
-
-        //вызываем синхронизированный метод внутри объекта
-        account.goodTransactions(withdrawMoney);
-    }
-}
-
 public class UseLockForSync {
     @Test
     void run_example_whenWithSynchronized_useReentrantLock() {

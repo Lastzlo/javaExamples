@@ -10,7 +10,7 @@ class MyThread implements Runnable {
         try {
             for (int i = 5; i > 0; i--) {
                 System.out.println(name + " : " + i);
-                Thread.sleep(1000);
+                Thread.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println(this.name + " перерваний");

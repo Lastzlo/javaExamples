@@ -77,14 +77,7 @@ public class Task1 {
 
 }
 
-enum Month {
-    April,
-    Spring;
 
-    Month() {
-        System.out.println("color");
-    }
-}
 
 class Examp {
     public static void main(String[] args) {
@@ -182,6 +175,6 @@ class TestClass {
 
         LocalDate localDate = LocalDate.of(2020, java.time.Month.JUNE, 22);
         LocalDate localDate2 = LocalDate.of(2020, java.time.Month.JUNE, 23);
-        System.out.println(Duration.between(localDate, localDate2));
+        //System.out.println(Duration.between(localDate, localDate2));
     }
 }

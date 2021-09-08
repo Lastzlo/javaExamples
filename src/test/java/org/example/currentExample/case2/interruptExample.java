@@ -16,7 +16,7 @@ class TestThread extends Thread {
             System.out.println ("Some text #" + i);
             i++;
             try {
-                Thread.sleep (1000);
+                Thread.sleep (100);
             } catch (InterruptedException e) {
                 System.out.println ("Child thread InterruptedException");
                 return;
@@ -36,7 +36,7 @@ public class interruptExample {
         thread.start ();
 
         try {
-            Thread.sleep (5000);
+            Thread.sleep (500);
         } catch (InterruptedException e) {
             System.out.println("Main thread Interrupted");
         }
@@ -65,7 +65,7 @@ public class interruptExample {
         thread.start ();
 
         try {
-            Thread.sleep (5000);
+            Thread.sleep (500);
         } catch (InterruptedException e) {
             System.out.println("Main thread Interrupted");
         }
