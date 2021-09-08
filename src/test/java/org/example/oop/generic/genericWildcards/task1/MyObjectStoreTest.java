@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 
-class MyObjectStoreTest {
+public class MyObjectStoreTest {
 
     @Test
     public void create() {
-        MyObjectStore<Long, Car> carsStore = new VehicleStoreImpl<>();
+        MyObjectStore<Long, Car> carsStore = new VehicleStoreImpl<Long, Car>();
 
         carsStore.put(20334L, new Car("BMW", "X5", 2013));
 
@@ -17,7 +17,7 @@ class MyObjectStoreTest {
 
     @Test
     public void create_andUsePredicate() {
-        MyObjectStore<Long, Car> carsStore = new VehicleStoreImpl<>();
+        MyObjectStore<Long, Car> carsStore = new VehicleStoreImpl<Long, Car>();
 
         carsStore.put(20334L, new Car("BMW", "X5", 2013));
 
