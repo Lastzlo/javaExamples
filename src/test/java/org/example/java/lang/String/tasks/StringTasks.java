@@ -81,15 +81,47 @@ public class StringTasks {
     }
 
     @Test
-    public void StringIntern() {
+    public void whenDoubleEquals() {
+        String s1 = "str";
+        String s2 = "str";
+
+        //так как (s1 == s2) то операция происходит, а потом присоединяется
+        System.out.println("text = "  + (s1 == s2)); //text =  true
+        System.out.println((s1 == s2) + " = text");  //true = text
+        boolean b1 = (s1 == s2);    //true
+        assertTrue(b1);
+
+        //так как s1 == s2 то происходит преобразование "text = " к boolean
+        System.out.println("text = "    +   s1 == s2); //false
+        System.out.println(s1 == s2 + " = text"); //false
+        boolean b2 = s1 == s2;  //true
+        assertTrue(b2);
+
+        // компилируется ведь вначале, идет String
+        boolean b3 = s1 == true + s2;
+        assertFalse(b3);
+        boolean b4 = s2 + false == s2;
+        assertFalse(b4);
+
+        String s3 = b3 + "text = "; //тут boolean преобразуется к String
+        String s4 = b3 + s2; //тут boolean преобразуется к String
+
+        // не компилируется ведь вначале boolean, а потом String
+//        System.out.println(b3 == b2 + "text = "); //text =  true
+//        String s5 = b3 == b2 + "text = ";
+//
+//        boolean b5 = b3 + s2;
+//        boolean b6 = b3 == s1 + s2;
+//        boolean b7 = b3 == b2 + b2;
+    }
+
+
+    @Test
+    public void whenIntern() {
         String s1 = "abc";
         String s2 = "abc";
         System.out.println("(s1 == s2) = " + (s1 == s2)); //true
-
         System.out.println("(s1 == s2.intern()) = " + (s1 == s2.intern())); //true
-
-        System.out.println("(\"123\" == \"123\") = " + ("123" == "123")); //true
-        System.out.println(true + "(true)"); //true
     }
 
     @Test
