@@ -130,4 +130,14 @@ public class StringTasks {
         s1.concat(s1);
     }
 
+    @Test
+    public void whenFormat() {
+        String type = "Rare";
+        String color = "Red";
+        String name = "MyPlant";
+
+        assertEquals("{type: Rare, color: Red, name: MyPlant}",
+                String.format("{type: %s, color: %s, name: %s}", type, color, name));
+    }
+
 }
