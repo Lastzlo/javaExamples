@@ -1,10 +1,11 @@
 package org.example.java.lang.String.tasks;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTasks {
 
@@ -28,7 +29,7 @@ public class StringTasks {
         //Пояснение: Операции сравнения имеют более низкий приоритет, чем операция конкатенации.
 
         boolean isFalse = s2 + s1 == s2 + s1;
-        Assertions.assertFalse(isFalse);
+        assertFalse(isFalse);
 
         System.out.println("Result: " + (s1 != s2));  //Result: true
 
@@ -40,14 +41,14 @@ public class StringTasks {
     public void isFirsLetterInUpperCase_thenFalse() {
         String word = "abcde";
         boolean isUpperCase = Character.isUpperCase(word.charAt(0));
-        Assertions.assertFalse(isUpperCase);
+        assertFalse(isUpperCase);
     }
 
     @Test
     public void isFirsLetterInUpperCase_thenTrue() {
         String word = "Abcde";
         boolean isUpperCase = Character.isUpperCase(word.charAt(0));
-        Assertions.assertTrue(isUpperCase);
+        assertTrue(isUpperCase);
     }
 
 
@@ -68,15 +69,15 @@ public class StringTasks {
 
     @Test
     public void task1_whenWordCorrect_thenTrue() {
-        Assertions.assertTrue(task1("Abcde"));
-        Assertions.assertTrue(task1("Ab cde"));
-        Assertions.assertTrue(task1("Ab-cde"));
+        assertTrue(task1("Abcde"));
+        assertTrue(task1("Ab cde"));
+        assertTrue(task1("Ab-cde"));
     }
 
     @Test
     public void task1_whenWordIllegal_thenFalse() {
-        Assertions.assertFalse(task1("abcde"));
-        Assertions.assertFalse(task1("Abcd2e"));
+        assertFalse(task1("abcde"));
+        assertFalse(task1("Abcd2e"));
     }
 
     @Test
