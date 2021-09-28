@@ -21,6 +21,22 @@ public class StringTasks {
     }
 
     @Test
+    void printLnTask2() {
+        String s1 = "str";
+        String s2 = "str2";
+        System.out.println("Result: " + s1 != s2);  //true
+        //Пояснение: Операции сравнения имеют более низкий приоритет, чем операция конкатенации.
+
+        boolean isFalse = s2 + s1 == s2 + s1;
+        Assertions.assertFalse(isFalse);
+
+        System.out.println("Result: " + (s1 != s2));  //Result: true
+
+        System.out.println("Result: " + (s1 = s2));   //Result: str2
+
+    }
+
+    @Test
     public void isFirsLetterInUpperCase_thenFalse() {
         String word = "abcde";
         boolean isUpperCase = Character.isUpperCase(word.charAt(0));
@@ -72,6 +88,7 @@ public class StringTasks {
         System.out.println("(s1 == s2.intern()) = " + (s1 == s2.intern())); //true
 
         System.out.println("(\"123\" == \"123\") = " + ("123" == "123")); //true
+        System.out.println(true + "(true)"); //true
     }
 
     @Test
