@@ -80,6 +80,46 @@ public class StringTasks {
         assertFalse(task1("Abcd2e"));
     }
 
+    //https://ru.stackoverflow.com/questions/417405/%d0%9a%d0%b0%d0%ba-%d1%81%d1%80%d0%b0%d0%b2%d0%bd%d0%b8%d0%b2%d0%b0%d1%82%d1%8c-%d1%81%d1%82%d1%80%d0%be%d0%ba%d0%b8-%d0%b2-java
+    @Test
+    public void whenDoubleEquals2() {
+        String s1 = "// эти строки указывают на один и тот же объект,\n" +
+                "// потому что компилятор добавляет все литералы в пул.\n" +
+                "\"test\" == \"test\" // --> true ";
+
+        String s2 = "// эти строки указывают на один и тот же объект,\n" +
+                "// потому что компилятор добавляет все литералы в пул.\n" +
+                "\"test\" == \"test\" // --> true ";
+
+        assertTrue(s2 == s1);
+
+
+        // Эти строки имеют одно и тоже же значение
+        boolean equals1 = new String("test").equals("test");// --> true
+        assertTrue(equals1);
+// ...но это разные объекты
+        boolean equals2 = new String("test") == "test";// --> false
+        assertFalse(equals2);
+// ...эти строки тоже разные объекты
+        boolean equals3 = new String("test") == new String("test"); // --> false
+        assertFalse(equals3);
+// ...но эти строки указывают на один и тот же объект,
+// потому что компилятор добавляет все литералы в пул.
+        boolean equals4 = "test" == "test"; // --> true
+        assertTrue(equals4);
+// Конкатенация литералов тоже происходит на стадии компиляции,
+// поэтому они указывают на один объект
+        boolean equals5 = "test" == "te" + "st"; // --> true
+        assertTrue(equals5);
+// но вызов substring() происходит во время выполнения,
+// в результате получаются разные объекты.
+        boolean equals6 = "test" == "!test".substring(1); // --> false
+        assertFalse(equals6);
+// Строки из пула могут быть получены с помощью вызова intern().
+        boolean equals7 = "test" == "!test".substring(1).intern(); // --> true
+        assertTrue(equals7);
+    }
+
     @Test
     public void whenDoubleEquals() {
         String s1 = "str";
